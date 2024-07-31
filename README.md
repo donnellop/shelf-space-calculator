@@ -1,8 +1,6 @@
 # shelf-space-calculator
 A calculator to allocate library shelf space, as informed by historic subclass expansion, using Alma Analytics reports and space measurements
 
-Based on the provided Python code, I will draft a README file for your GitHub repository. This file will include sections such as the project title, description, installation instructions, usage, and other relevant information.
-
 ### README.md
 
 ```markdown
