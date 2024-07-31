@@ -3,7 +3,7 @@ A calculator to allocate library shelf space, as informed by historic subclass e
 
 ### README.md
 
-```markdown
+
 # Space Calculations July 2024
 
 This project is designed to calculate and manage the space utilization of library shelves in a way that is informed by the expansion of each subclass over a defined time period. It includes tools for measuring and analyzing the total, occupied, and free space on library shelves.
@@ -27,7 +27,7 @@ You can install the required libraries using pip:
 
 ```bash
 pip install pandas
-```
+
 
 ## Usage
 
