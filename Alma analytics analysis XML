@@ -1,0 +1,154 @@
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+   <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Physical Items&quot;" withinHierarchy="true">
+      <saw:columns>
+         <saw:column xsi:type="saw:regularColumn" columnID="c862981b2b0803aa3">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">"Location"."Library Code"</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true" interaction="clientEvent">
+                  <saw:clientEventSpec channel="obips"/></saw:formatSpec></saw:displayFormat>
+            <saw:columnHeading>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c047f2f8e686ba621">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">"Location"."Location Code"</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true" interaction="clientEvent">
+                  <saw:clientEventSpec channel="obips"/></saw:formatSpec></saw:displayFormat>
+            <saw:columnHeading>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="cbebec1bf614744fc">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Holding Lifecycle"</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true" interaction="clientEvent">
+                  <saw:clientEventSpec channel="obips"/></saw:formatSpec></saw:displayFormat>
+            <saw:columnHeading>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c8086737ac2d0a9a8">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Permanent LC Classification Code"</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec suppress="suppress" wrapText="true" interaction="clientEvent" visibility="hidden">
+                  <saw:clientEventSpec channel="obips"/></saw:formatSpec></saw:displayFormat>
+            <saw:columnHeading>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c0c8a9e3f7358e459">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN "Holding Details"."Permanent LC Classification Code"= 'PQ' AND "Holding Details"."Permanent LC Classification Number" BETWEEN 1 AND 4000 THEN 'PQ1-4000'  WHEN "Holding Details"."Permanent LC Classification Code"= 'PQ' AND "Holding Details"."Permanent LC Classification Number" BETWEEN 4001 AND 4199 then 'PQ4001-4199'  WHEN "Holding Details"."Permanent LC Classification Code"= 'PQ' AND "Holding Details"."Permanent LC Classification Number" BETWEEN 4200 AND 4399 then 'PQ4200-4399'  WHEN "Holding Details"."Permanent LC Classification Code"= 'PQ' AND "Holding Details"."Permanent LC Classification Number" BETWEEN 4400 AND 4599 then 'PQ4400-4599'  WHEN "Holding Details"."Permanent LC Classification Code"= 'PQ' AND "Holding Details"."Permanent LC Classification Number" BETWEEN 4600 AND 4674 then 'PQ4600-4674' WHEN "Holding Details"."Permanent LC Classification Code"= 'PQ' AND "Holding Details"."Permanent LC Classification Number" BETWEEN 4675 AND 99999 then 'PQ4675 to END'   ELSE "Holding Details"."Permanent LC Classification Code"  END</sawx:expr></saw:columnFormula>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Holding Details</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>subclass</saw:text></saw:caption></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="ce8bbf1f1b44b597b">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">"Physical Item Details"."Num of Items (In Repository)"</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="cd6fd72d8e0328a48">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">FILTER("Physical Item Details"."Num of Items (In Repository)" USING ("Item Receiving Date"."Item Receiving Fiscal Year" IN ('FY-2003', 'FY-2005', 'FY-2004', 'FY-2006', 'FY-2007', 'FY-2008', 'FY-2009', 'FY-2010', 'FY-2011', 'FY-2012', 'FY-2013', 'FY-2014', 'FY-2015', 'FY-2016', 'FY-2017', 'FY-2018', 'FY-2019')))</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec suppress="repeat" wrapText="true"/></saw:displayFormat>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Physical Item Details</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat>
+               <saw:caption fmt="text">
+                  <saw:text>Items received before FY20</saw:text></saw:caption></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c647b8bc2feb35acb">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">CAST(FILTER("Physical Item Details"."Num of Items (In Repository)" USING ("Item Receiving Date"."Item Receiving Fiscal Year" IN ('FY-2024', 'FY-2023', 'FY-2022', 'FY-2021', 'FY-2020'))) AS INT)</sawx:expr></saw:columnFormula>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Physical Item Details</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>items received FY20-24</saw:text></saw:caption></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:savedRegularColumnRef" path="/shared/Harvard University/_Departmental Reports/BER/Saved columns/acquisition item counts FY20-24" columnID="c7028be83dae35ec2">
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Physical Item Details</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Grand total items added FY20-24</saw:text></saw:caption></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="cfd654a16c9ef9beb">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">FILTER("Physical Item Details"."Num of Items (In Repository)" USING ("Item Receiving Date"."Item Receiving Fiscal Year" IN ('FY-2024', 'FY-2023', 'FY-2022', 'FY-2021', 'FY-2020')))/SUM(FILTER("Physical Item Details"."Num of Items (In Repository)" USING ("Item Receiving Date"."Item Receiving Fiscal Year" IN ('FY-2024', 'FY-2023', 'FY-2022', 'FY-2021', 'FY-2020'))))</sawx:expr></saw:columnFormula>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Physical Item Details</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>growth as proportion of all FY20-24 volumes</saw:text></saw:caption></saw:columnHeading></saw:column></saw:columns>
+      <saw:filter>
+         <sawx:expr xsi:type="sawx:logical" op="and">
+            <sawx:expr xsi:type="sawx:comparison" op="equal">
+               <sawx:expr xsi:type="sawx:sqlExpression">"Location"."Library Code"</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">BER</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:comparison" op="equal">
+               <sawx:expr xsi:type="sawx:sqlExpression">"Location"."Location Code"</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">GEN</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:comparison" op="equal">
+               <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Holding Lifecycle"</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">Active</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:list" op="beginsWith">
+               <sawx:expr xsi:type="sawx:sqlExpression">"Physical Item Details"."Barcode"</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">32044</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:list" op="notIn">
+               <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Permanent LC Classification Code"</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">M</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">ML</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">MT</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">N</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">NA</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">NB</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">NC</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">ND</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">NE</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">NK</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">NX</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">Unknown</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">L</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">KKZ</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:list" op="notContains">
+               <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Permanent Call Number"</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">Library</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+               <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Normalized Call Number"</sawx:expr>
+               <sawx:expr xsi:type="xsd:string">0g!95 p87 1905</sawx:expr></sawx:expr></sawx:expr></saw:filter></saw:criteria>
+   <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="true" showhiderunningsum="false" inclexclcolumns="true"/>
+   <saw:views textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true" currentView="0">
+      <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+         <saw:cvTable>
+            <saw:cvRow>
+               <saw:cvCell viewName="titleView!1"/></saw:cvRow>
+            <saw:cvRow>
+               <saw:cvCell viewName="tableView!1"/></saw:cvRow></saw:cvTable></saw:view>
+      <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="none"/>
+      <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+         <saw:edges>
+            <saw:edge axis="page" showColumnHeader="true"/>
+            <saw:edge axis="section"/>
+            <saw:edge axis="row" showColumnHeader="true">
+               <saw:displayGrandTotals>
+                  <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/></saw:displayGrandTotals>
+               <saw:edgeLayers>
+                  <saw:edgeLayer type="column" columnID="c0c8a9e3f7358e459"/>
+                  <saw:edgeLayer type="column" columnID="c8086737ac2d0a9a8" uiTableName="Holding Details"/>
+                  <saw:edgeLayer type="column" columnID="ce8bbf1f1b44b597b" aggRule="sum" uiTableName="Physical Item Details"/>
+                  <saw:edgeLayer type="column" columnID="c862981b2b0803aa3" uiTableName="Location"/>
+                  <saw:edgeLayer type="column" columnID="c047f2f8e686ba621" uiTableName="Location"/>
+                  <saw:edgeLayer type="column" columnID="cbebec1bf614744fc" uiTableName="Holding Details"/>
+                  <saw:edgeLayer type="column" columnID="cd6fd72d8e0328a48" uiTableName="Physical Item Details"/>
+                  <saw:edgeLayer type="column" columnID="c647b8bc2feb35acb" uiTableName="Physical Item Details"/>
+                  <saw:edgeLayer type="column" columnID="c7028be83dae35ec2" uiTableName="Physical Item Details"/>
+                  <saw:edgeLayer type="column" columnID="cfd654a16c9ef9beb" uiTableName="Physical Item Details"/></saw:edgeLayers></saw:edge>
+            <saw:edge axis="column" showColumnHeader="rollover"/></saw:edges></saw:view></saw:views>
+   <saw:prompts scope="report" subjectArea="&quot;Physical Items&quot;"/></saw:report>
