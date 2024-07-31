@@ -25,11 +25,12 @@ pip install pandas
 
 ## Usage
 
-1. Clone the repository or download the script.
-2. Open the script in a Python environment (preferably Google Colab).
+1. Prepare the data input files. The data file subclass_data originates in an Alma Analytics report on historical acquisitions patterns broken down by subclass, integrated with measurements of the linear cm occupied by each subclass (see the Analytics XML file). The data file shelf_map originates from a mapping of the banks of shelving in the relevant section of the library. Sample Excel files are provided. 
+2. Ideally, import this repository into Google Colab as a new notebook.
 3. Create a folder structure in Colab with the path `content/files/inputs`.
-4. Upload the necessary data files (`shelf_map.xlsx` and `subclass_data.xlsx`) into the `inputs` folder. The data file subclass_data originates in an Alma Analytics report on historical acquisitions patterns broken down by subclass, integrated with measurements of the linear cm occupied by each subclass. the data file shelf_map originates from a mapping of the banks of shelving in the relevant section of the library. Example Excel files are provided. 
-5. Run the script.
+4. Upload the necessary data files (`shelf_map.xlsx` and `subclass_data.xlsx`) into the `inputs` folder.  
+5. Run the script. The space allocations will be saved as an Excel file at content/files/outputs.
+6. Download the Excel file 'outputs'.
 
 ### Example
 
