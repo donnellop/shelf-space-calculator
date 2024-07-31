@@ -1,8 +1,6 @@
 # shelf-space-calculator
 A calculator to allocate library shelf space, as informed by historic subclass expansion, using Alma Analytics reports and space measurements
 
-### README.md
-
 This project is designed to calculate and manage the space utilization of library shelves in a way that is informed by the expansion of each subclass, or part of a subclass, over a defined time period. It includes tools for measuring and analyzing the total, occupied, and free space on library shelves and for calculating free space necessary for expansion based on historic acquisition patterns. 
 
 ## Description
