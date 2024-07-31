@@ -1,15 +1,14 @@
 # shelf-space-calculator
 A calculator to allocate library shelf space, as informed by historic subclass expansion, using Alma Analytics reports and space measurements
 
-This project is designed to calculate and manage the space utilization of library shelves in a way that is informed by the expansion of each subclass, or part of a subclass, over a defined time period. It includes tools for measuring and analyzing the total, occupied, and free space on library shelves and for calculating free space necessary for expansion based on historic acquisition patterns. 
-
 ## Description
 
-This script helps in determining the free space on library shelves by taking user inputs for total shelf space and occupied shelf space. It also includes data processing functions to analyze shelf maps and subclass data.
+This project is designed to calculate and manage the space utilization of library shelves in a way that is informed by the expansion of each subclass, or part of a subclass, over a defined time period. It includes tools for measuring and analyzing the total, occupied, and free space on library shelves and for calculating free space necessary for expansion based on historic acquisition patterns. 
+
 
 ## Features
 
-- Input total and occupied shelf space to calculate free space.
+- Input total and occupied shelf space to calculate free space for the an entire library, room or section, as well as for every single shelf, allocating different percentages of free space in each Library of Congress subclass or part of subclass based on projected growth. 
 - Data processing for shelf maps and subclass data using Pandas.
 - Designed to run in a Colab environment.
 
